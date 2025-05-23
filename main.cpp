@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <limits>
 
 using namespace std;
 
@@ -52,6 +53,16 @@ int main() {
         displayMenu();
         cout << "Enter your choice: ";
         cin >> choice;
+
+         // Check if input is valid
+        if (!(cin >> choice)) {
+            // Clear the error state
+            cin.clear();
+            // Clear the input buffer
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input! Please enter a number between 1 and 9." << endl;
+            continue;
+        }
         
         switch(choice) {
             case 1:
@@ -102,7 +113,6 @@ void displayMenu() {
     cout << "8. Display recorded data on console" << endl;
     cout << "9. Exit" << endl;
 }
-
 
 // Function to add cities
 void addCities() {
