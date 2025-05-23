@@ -1,71 +1,106 @@
-# Rwanda Transport Management System
+# 🏙️ Rwanda Cities and Roads Management System
 
-A C++ console application for managing Rwanda's transport infrastructure, including cities and roads between them.
+A C++ console application for managing cities and road networks in Rwanda, developed for the Ministry of Infrastructure.
 
-## Features
+## 📋 Overview
 
-- Record and manage cities
-- Add and manage roads between cities
-- Track road budgets
-- Search and display city information
-- Graph-based representation of roads and budgets
-- Data persistence using text files
+This system helps manage and track:
 
-## Project Structure
+- Cities (including Kigali and secondary cities)
+- Road connections between cities
+- Road construction budgets
+- City information updates
 
-```
-transport/
-├── include/              # Header files
-│   ├── City.h           # City class definition
-│   ├── Road.h           # Road class definition
-│   ├── Graph.h          # Graph class for adjacency matrices
-│   └── FileManager.h    # File handling utilities
-│
-├── src/                 # Source files
-│   ├── City.cpp         # City class implementation
-│   ├── Road.cpp         # Road class implementation
-│   ├── Graph.cpp        # Graph class implementation
-│   ├── FileManager.cpp  # File handling implementation
-│   └── main.cpp         # Main program entry point
-│
-├── data/               # Data files
-│   ├── cities.txt      # City records
-│   └── roads.txt       # Road records
-│
-└── CMakeLists.txt      # CMake build configuration
-```
+## 📊 Flowcharts
 
-## Building the Project
+The system's logic is documented through flowcharts:
+
+### High-Level Overview
+
+![Summarized Flowchart](flowcharts/summarized-flowchart.png)
+_High-level overview of the system's main operations_
+
+### Detailed System Flow
+
+![Detailed Flowchart](flowcharts/detailed-flowchart.png)
+_Detailed flow of all system operations and decision points_
+
+These flowcharts provide a visual representation of the system's logic and decision-making processes.
+
+## 🌟 Features
+
+- **City Management**
+
+  - Add new cities
+  - Edit existing cities
+  - Search cities by index
+  - Display city database
+
+- **Road Network Management**
+
+  - Add roads between cities
+  - Assign and manage road budgets
+  - Display road network using adjacency matrices
+  - Track road construction costs
+
+- **Data Persistence**
+  - Automatic saving to files
+  - Data loading on startup
+  - Beautiful formatted output
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- C++ compiler (g++ or MSVC)
-- CMake (version 3.10 or higher)
+- C++ compiler (supporting C++11 or later)
+- Make or similar build system
 
-### Build Instructions
+### Installation
 
-1. Create a build directory:
-
-```bash
-mkdir build
-cd build
-```
-
-2. Generate build files:
+1. Clone the repository
 
 ```bash
-cmake ..
+git clone https://github.com/Nbruchi/rwanda-cities-roads.git
 ```
 
-3. Build the project:
+2. Compile the program
 
 ```bash
-cmake --build .
+g++ main.cpp -o rwanda-cities-roads
 ```
 
-## Usage
+3. Run the program
 
-Run the compiled executable to start the application. The program provides the following menu options:
+```bash
+./rwanda-cities-roads
+```
+
+## 📊 Data Structure
+
+The system maintains:
+
+- City database with indices
+- Road network using adjacency matrices
+- Budget information for each road
+- Persistent storage in `cities.txt` and `roads.txt`
+
+## 🎯 Usage
+
+1. Start by adding the initial cities:
+
+   - Kigali (Capital)
+   - Huye
+   - Muhanga
+   - Musanze
+   - Nyagatare
+   - Rubavu
+   - Rusizi
+
+2. Add roads between cities
+3. Assign budgets to roads
+4. Use the menu system to manage and view data
+
+## 📝 Menu Options
 
 1. Add new city(ies)
 2. Add roads between cities
@@ -77,9 +112,42 @@ Run the compiled executable to start the application. The program provides the f
 8. Display recorded data on console
 9. Exit
 
-## Data Files
+## 🔒 Data Validation
 
-The program maintains two data files:
+The system includes checks for:
 
-- `cities.txt`: Contains city records (index and name)
-- `roads.txt`: Contains road records (road connection and budget)
+- Duplicate cities
+- Road existence before budget assignment
+- Input type validation
+- Data integrity
+
+## 📁 File Structure
+
+```
+.
+├── main.cpp          # Main program file
+├── cities.txt        # City database
+├── roads.txt         # Road and budget database
+├── .gitignore        # Git ignore file
+├── README.md         # This file
+└── flowcharts/       # System flowcharts
+    ├── summarized-flowchart.png
+    └── detailed-flowchart.png
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Authors
+
+- Your Name - Initial work
+
+## 🙏 Acknowledgments
+
+- Ministry of Infrastructure, Rwanda
+- All contributors and supporters
