@@ -325,7 +325,7 @@ void saveToFiles() {
     ofstream cityFile("cities.txt");
     if (cityFile.is_open()) {
         cityFile << "╠════════════════════════════════════╣" << endl;
-        cityFile << "║ Index │ City Name                  ║" << endl;
+        cityFile << "║ Index │ City Name               ║" << endl;
         cityFile << "╟───────┼────────────────────────────╢" << endl;
         for (const auto& city : cities) {
             cityFile << "║ " << setw(5) << city.index << " │ " 
@@ -339,7 +339,7 @@ void saveToFiles() {
     ofstream roadFile("roads.txt");
     if (roadFile.is_open()) {
         roadFile << "╠════════════════════════════════════════════════════════════╣" << endl;
-        roadFile << "║ Nbr. │ Road                      │ Budget                   ║" << endl;
+        roadFile << "║ Nbr. │ Road                      │ Budget             ║" << endl;
         roadFile << "╟─────┼───────────────────────────────┼─────────────────────╢" << endl;
         int roadNum = 1;
         for (const auto& road : roads) {
