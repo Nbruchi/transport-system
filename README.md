@@ -60,19 +60,19 @@ These flowcharts provide a visual representation of the system's logic and decis
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Nbruchi/rwanda-cities-roads.git
+git clone https://github.com/Nbruchi/transport-system.git
 ```
 
 2. Compile the program
 
 ```bash
-g++ main.cpp -o rwanda-cities-roads
+g++ main.cpp -o transport-system
 ```
 
 3. Run the program
 
 ```bash
-./rwanda-cities-roads
+./transport-system
 ```
 
 ## 📊 Data Structure
@@ -83,22 +83,6 @@ The system maintains:
 - Road network using adjacency matrices
 - Budget information for each road
 - Persistent storage in `cities.txt` and `roads.txt`
-
-## 🎯 Usage
-
-1. Start by adding the initial cities:
-
-   - Kigali (Capital)
-   - Huye
-   - Muhanga
-   - Musanze
-   - Nyagatare
-   - Rubavu
-   - Rusizi
-
-2. Add roads between cities
-3. Assign budgets to roads
-4. Use the menu system to manage and view data
 
 ## 📝 Menu Options
 
@@ -135,19 +119,10 @@ The system includes checks for:
     └── detailed-flowchart.png
 ```
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👥 Authors
 
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- Ministry of Infrastructure, Rwanda
-- All contributors and supporters
+- Bruce NKUNDABAGENZI - Initial work
