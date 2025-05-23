@@ -4,7 +4,6 @@
 #include <vector>
 #include <string>
 #include <iomanip>
-#include <limits>
 
 using namespace std;
 
@@ -42,7 +41,6 @@ void saveToFiles();
 void loadFromFiles();
 bool cityExists(const string& cityName);
 int getCityIndex(const string& cityName);
-void initializeRoadMatrices();
 
 // Function to run the program
 int main() {
@@ -53,16 +51,6 @@ int main() {
         displayMenu();
         cout << "Enter your choice: ";
         cin >> choice;
-
-         // Check if input is valid
-        if (!(cin >> choice)) {
-            // Clear the error state
-            cin.clear();
-            // Clear the input buffer
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input! Please enter a number between 1 and 9." << endl;
-            continue;
-        }
         
         switch(choice) {
             case 1:
