@@ -1,10 +1,8 @@
 #include <iostream>
 #include <fstream>
-#include <algorithm>
 #include <sstream>
 #include <vector>
 #include <string>
-#include <map>
 #include <iomanip>
 
 using namespace std;
