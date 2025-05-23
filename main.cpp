@@ -25,7 +25,7 @@ struct Road {
 // Global variables
 vector<City> cities;
 vector<Road> roads;
-const int MAX_CITIES = 30; // Maximum number of cities allowed
+const int MAX_CITIES = 30; // Maximum number of cities allowed (30 as Rwanda has 30 districts)
 double roadMatrix[MAX_CITIES][MAX_CITIES] = {0}; // Adjacency matrix for roads
 double budgetMatrix[MAX_CITIES][MAX_CITIES] = {0}; // Adjacency matrix for budgets
 
@@ -45,6 +45,7 @@ bool cityExists(const string& cityName);
 int getCityIndex(const string& cityName);
 void initializeRoadMatrices();
 
+// Function to run the program
 int main() {
     loadFromFiles(); // Load existing data if any
     
@@ -104,6 +105,8 @@ void displayMenu() {
     cout << "9. Exit" << endl;
 }
 
+
+// Function to add cities
 void addCities() {
     int numCities;
     cout << "Enter the number of cities to add: ";
@@ -131,6 +134,7 @@ void addCities() {
     saveToFiles();
 }
 
+// Function to check if city exitsts
 bool cityExists(const string& cityName) {
     for (const auto& city : cities) {
         if (city.name == cityName) {
@@ -140,6 +144,7 @@ bool cityExists(const string& cityName) {
     return false;
 }
 
+//Function to get city by index (not by name as some requirements in problem.txt mention)
 int getCityIndex(const string& cityName) {
     for (const auto& city : cities) {
         if (city.name == cityName) {
@@ -149,6 +154,7 @@ int getCityIndex(const string& cityName) {
     return -1;
 }
 
+// Function to edit city name
 void editCity() {
     int index;
     cout << "Enter the index of the city to edit: ";
@@ -173,6 +179,7 @@ void editCity() {
     saveToFiles();
 }
 
+// Functio to search city by index
 void searchCity() {
     int index;
     cout << "Enter the index of the city to search: ";
@@ -186,6 +193,7 @@ void searchCity() {
     cout << "City found: " << cities[index - 1].name << endl;
 }
 
+// Function to display all available cities
 void displayCities() {
     cout << "\nCities:" << endl;
     for (const auto& city : cities) {
@@ -193,6 +201,7 @@ void displayCities() {
     }
 }
 
+// Function to add roads between two cities
 void addRoads() {
     string city1, city2;
     cout << "Enter the name of the first city: ";
@@ -223,6 +232,7 @@ void addRoads() {
     saveToFiles();
 }
 
+// Function to add budget on a road
 void addBudget() {
     string city1, city2;
     cout << "Enter the name of the first city: ";
@@ -268,6 +278,7 @@ void addBudget() {
     saveToFiles();
 }
 
+// Function to display roads
 void displayRoads() {
     cout << "\nCities:" << endl;
     for (const auto& city : cities) {
@@ -283,6 +294,10 @@ void displayRoads() {
     }
 }
 
+/*
+Function to display all data
+It shows the available cities, adjacency matrix for roads and budgets
+*/ 
 void displayAllData() {
     displayCities();
     
@@ -303,12 +318,14 @@ void displayAllData() {
     }
 }
 
+/*
+Function to save to files
+Added a little formatting to beautify stuff
+*/
 void saveToFiles() {
     // Save cities to cities.txt
     ofstream cityFile("cities.txt");
     if (cityFile.is_open()) {
-        cityFile << "╔════════════════════════════════════╗" << endl;
-        cityFile << "║           CITIES DATABASE          ║" << endl;
         cityFile << "╠════════════════════════════════════╣" << endl;
         cityFile << "║ Index │ City Name                  ║" << endl;
         cityFile << "╟───────┼────────────────────────────╢" << endl;
@@ -323,8 +340,6 @@ void saveToFiles() {
     // Save roads to roads.txt
     ofstream roadFile("roads.txt");
     if (roadFile.is_open()) {
-        roadFile << "╔════════════════════════════════════════════════════════════╗" << endl;
-        roadFile << "║                     ROADS DATABASE                         ║" << endl;
         roadFile << "╠════════════════════════════════════════════════════════════╣" << endl;
         roadFile << "║ Nbr. │ Road                      │ Budget                   ║" << endl;
         roadFile << "╟─────┼───────────────────────────────┼─────────────────────╢" << endl;
@@ -342,6 +357,7 @@ void saveToFiles() {
     }
 }
 
+// Function to load data from files
 void loadFromFiles() {
     // Load cities from cities.txt
     ifstream cityFile("cities.txt");
